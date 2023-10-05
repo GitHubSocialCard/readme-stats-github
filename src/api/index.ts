@@ -1,6 +1,6 @@
 import getData from "../helper/getData";
 import template from "../helper/template";
-import type { themes } from "../../themes/index";
+import { themes } from "../../themes/index";
 
 export type UiConfig = {
   titleColor: string;
@@ -14,9 +14,9 @@ export default async function readmeStats(req: any, res: any): Promise<any> {
   try {
     let username = req.query.username;
 
-    type fallbackTheme = "default";
-    type defaultTheme = themes[fallbackTheme];
-    type selectTheme = themes[req.query.theme] || defaultTheme;
+    const fallbackTheme = "default";
+    const defaultTheme = themes[fallbackTheme];
+    const selectTheme = themes[req.query.theme] || defaultTheme;
 
     let uiConfig: UiConfig = {
       titleColor: req.query.title_color || selectTheme.title_color || defaultTheme.title_color,

@@ -1,4 +1,4 @@
-export type themes = {
+export const themes = {
   default: {
     title_color: "2f80ed",
     text_color: "434d58",
