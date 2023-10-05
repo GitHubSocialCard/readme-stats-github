@@ -1,24 +1,29 @@
 import getData from "../helper/getData";
 import template from "../helper/template";
+import type { themes } from "../../themes/index";
 
 export type UiConfig = {
-  title_clr: string;
-  text_clr: string;
-  icon_clr: string;
-  border_clr: string;
-  bg_clr: string;
+  titleColor: string;
+  textColor: string;
+  iconColor: string;
+  borderColor: string;
+  bgColor: string;
 };
 
 export default async function readmeStats(req: any, res: any): Promise<any> {
   try {
     let username = req.query.username;
 
+    type fallbackTheme = "default";
+    type defaultTheme = themes[fallbackTheme];
+    type selectTheme = themes[req.query.theme] || defaultTheme;
+
     let uiConfig: UiConfig = {
-      title_clr: req.query.title_color || "000000",
-      text_clr: req.query.text_color || "000000",
-      icon_clr: req.query.icon_color || "FF0000",
-      border_clr: req.query.border_color || "7E7979",
-      bg_clr: req.query.bg_color || "FFFFFF",
+      titleColor: req.query.title_color || selectTheme.title_color || defaultTheme.title_color,
+      textColor: req.query.text_color || selectTheme.text_color || defaultTheme.text_color,
+      iconColor: req.query.icon_color || selectTheme.icon_color || defaultTheme.icon_color,
+      borderColor: req.query.border_color || selectTheme.border_color || defaultTheme.border_color,
+      bgColor: req.query.bg_color || selectTheme.bg_color || defaultTheme.bg_color,
     };
 
     if (!username) throw new Error("Username is required");
