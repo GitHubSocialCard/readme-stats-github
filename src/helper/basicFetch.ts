@@ -11,6 +11,8 @@ export interface User {
   contributionsCollection: ContributionsCollection;
   openedIssues: OpenedIssues;
   closedIssues: ClosedIssues;
+  pullRequests: PullRequests;
+  mergedPullRequests: MergedPullRequests;
 }
 
 export interface Repositories {
@@ -35,6 +37,14 @@ export interface OpenedIssues {
 }
 
 export interface ClosedIssues {
+  totalCount: number;
+}
+
+export interface PullRequests {
+  totalCount: number;
+}
+
+export interface MergedPullRequests {
   totalCount: number;
 }
 
@@ -69,6 +79,12 @@ export default async function basicFetch(username: string): Promise<User> {
             totalCount
           }
           closedIssues: issues(states: CLOSED) {
+            totalCount
+          }
+          pullRequests(first: 1) {
+            totalCount
+          }
+          mergedPullRequests: pullRequests(states: MERGED) {
             totalCount
           }
         }

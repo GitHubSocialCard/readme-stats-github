@@ -14,6 +14,8 @@ export type GetData = {
   total_forks: string | number;
   total_issues: string | number;
   total_closed_issues: string | number;
+  total_prs: string | number;
+  total_merged_prs: string | number;
   total_contributions: string | number;
 };
 
@@ -39,6 +41,8 @@ async function getData(username: string): Promise<GetData> {
       user.openedIssues.totalCount + user.closedIssues.totalCount
     ),
     total_closed_issues: millify(user.closedIssues.totalCount),
+    total_prs: millify(user.pullRequests.totalCount),
+    total_merged_prs: millify(user.mergedPullRequests.totalCount),
     total_contributions: millify(
       user.contributionsCollection.restrictedContributionsCount +
         user.contributionsCollection.totalCommitContributions
