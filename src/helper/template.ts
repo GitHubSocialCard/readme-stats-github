@@ -62,7 +62,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
             }
         }
     </style>
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="494" fill="#${uiConfig.borderColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
+    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="494" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
 
     <g transform="translate(0, 25)">
 
