@@ -2,11 +2,11 @@ import getData from "../helper/getData";
 import template from "../helper/template";
 
 export type UiConfig = {
-  title_color: string;
-  text_color: string;
-  icon_color: string;
-  border_color: string;
-  bg_color: string;
+  title_clr: string;
+  text_clr: string;
+  icon_clr: string;
+  border_clr: string;
+  bg_clr: string;
 };
 
 export default async function readmeStats(req: any, res: any): Promise<any> {
@@ -14,11 +14,11 @@ export default async function readmeStats(req: any, res: any): Promise<any> {
     let username = req.query.username;
 
     let uiConfig: UiConfig = {
-      title_color: req.query.title_color || "000000",
-      text_color: req.query.text_color || "000000",
-      icon_color: req.query.icon_color || "FF0000",
-      border_color: req.query.border_color || "7E7979",
-      bg_color: req.query.bg_color || "FFFFFF",
+      title_clr: req.query.title_color || "000000",
+      text_clr: req.query.text_color || "000000",
+      icon_clr: req.query.icon_color || "FF0000",
+      border_clr: req.query.border_color || "7E7979",
+      bg_clr: req.query.bg_color || "FFFFFF",
     };
 
     if (!username) throw new Error("Username is required");
