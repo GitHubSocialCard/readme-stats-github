@@ -27,7 +27,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
 
         .namepl {
             font-family: Arial, Helvetica, sans-serif;
-            fill: #${uiConfig.title_color};
+            fill: #${uiConfig.text_color};
             font-size: 17px;
             font-weight: 600;
             alignment-baseline: middle;
@@ -62,7 +62,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
             }
         }
     </style>
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="494" fill="#${uiConfig.bg_color}" stroke="#${uiConfig.border_color}" stroke-opacity="1" />
+    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="494" fill="#${uiConfig.card_color}" stroke="#${uiConfig.border_color}" stroke-opacity="1" />
 
     <g transform="translate(0, 25)">
 
@@ -76,7 +76,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
             </image>
         </pattern>
     </defs>
-    <circle cx="86" cy="44" r="40" stroke="#${uiConfig.bg_color}" stroke-width="3" fill="url(#image)" />
+    <circle cx="86" cy="44" r="40" stroke="#${uiConfig.card_color}" stroke-width="3" fill="url(#image)" />
         <text x="86" y="100" class="namepl">${data.name}</text>
         <svg x="35" y="111.8" class="icon" viewBox="0 0 16 16" version="1.1" width="14" height="14">
             <path fill-rule="evenodd"
