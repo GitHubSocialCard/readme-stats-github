@@ -47,7 +47,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
 
         .text {
             font-family: Arial, Helvetica, sans-serif;
-            fill: #${data.textColor};
+            fill: #${uiConfig.textColor};
             font-size: 14px;
         }
         
@@ -58,28 +58,28 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
 
         .text-followers {
             font-family: "Segoe UI", Ubuntu, sans-serif;
-            fill: #${data.textColor};
+            fill: #${uiConfig.textColor};
             font-size: 13px;
         }
         
         .text-username {
             font-family: "Segoe UI", Ubuntu, sans-serif;
-            fill: #${data.usernameColor};
+            fill: #${uiConfig.usernameColor};
             font-weight: 750;
             font-size: 14.6px;
             alignment-baseline: middle;
             text-anchor: middle;
         }
 
-        .title {
+        .text-title {
             font-family: "Segoe UI", Ubuntu, sans-serif;
-            fill: #${data.titleColor};
+            fill: #${uiConfig.titleColor};
             font-size: 17px;
             font-weight: 600;
         }
 
         .icon {
-            fill: #${data.iconColor};
+            fill: #${uiConfig.iconColor};
             display: block;
         }
     </style>
@@ -88,7 +88,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
     <rect x="0.5" y="0.5" rx="4.5" height="99%" width="534" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
     <g transform="translate(0, 25)">
         <g class="div-animation">
-        	<text x="10" y="-10" class="title">${data.name}'s GitHub Stats</text>
+        	<text x="10" y="-10" class="text-title">${data.name}'s GitHub Stats</text>
         </g>
         <g class="image-profile-animation">
         	<defs>
