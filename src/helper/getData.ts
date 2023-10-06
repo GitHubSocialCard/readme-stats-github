@@ -18,7 +18,7 @@ export type GetData = {
   total_prs_merged: string | number;
   total_commits: string | number;
   total_contributed_to: string | number;
-  new_year: string | number;
+  new_year: number;
 };
 
 async function getData(username: string): Promise<GetData> {
@@ -50,7 +50,7 @@ async function getData(username: string): Promise<GetData> {
         user.contributionsCollection.totalCommitContributions
     ),
     total_contributed_to: millify(user.repositoriesContributedTo),
-    new_year: new Date().getFullYear();
+    new_year: new Date().getFullYear(),
   };
 
   return output;
