@@ -48,7 +48,7 @@ async function getData(username: string): Promise<GetData> {
       user.contributionsCollection.restrictedContributionsCount +
         user.contributionsCollection.totalCommitContributions
     ),
-    total_contributed_to: millify(user.repositoriesContributedTo),
+    total_contributed_to: millify(user.repositoriesContributedTo.totalCount),
   };
 
   return output;
