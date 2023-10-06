@@ -2,7 +2,7 @@ import type { GetData } from "./getData";
 import type { UiConfig } from "../api/index";
 
 export default function template(data: GetData, uiConfig: UiConfig): string {
-  var card = `<svg width="535" height="245" viewBox="0 0 536 245" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  var card = `<svg width="535" height="245" viewBox="0 0 535 245" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
     	/* Animations */
         @keyframes scaleInAnimation {
