@@ -8,6 +8,7 @@ export type UiConfig = {
   iconColor: string;
   borderColor: string;
   strokeColor: string;
+  usernameColor: string;
   bgColor: string;
 };
 
@@ -25,6 +26,7 @@ export default async function readmeStats(req: any, res: any): Promise<any> {
       iconColor: req.query.icon_color || selectTheme.icon_color || defaultTheme.icon_color,
       borderColor: req.query.border_color || selectTheme.border_color || defaultTheme.border_color,
       strokeColor: req.query.stroke_color || selectTheme.stroke_color || selectTheme.border_color || defaultTheme.border_color,
+      usernameColor: req.query.username_color || selectTheme.username_color || selectTheme.text_color || defaultTheme.text_color,
       bgColor: req.query.bg_color || selectTheme.bg_color || defaultTheme.bg_color,
     };
 
