@@ -96,11 +96,11 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         	         <image x="0%" y="0%" width="512" height="512" href="data:image/jpeg;base64,${data.pic}"></image>
                 </pattern>
             </defs>
-            <circle cx="125" cy="57" r="50" fill="url(#image)" stroke="#${uiConfig.strokeColor}" stroke-width="4"/>
+            <circle cx="125" cy="65" r="50" fill="url(#image)" stroke="#${uiConfig.strokeColor}" stroke-width="5"/>
         </g>
-        <text x="110.3" y="117" class="text-username div-animation">@${data.username}</text>
+        <text x="109.9" y="130" class="text-username div-animation">@${data.username}</text>
         <g class="div-animation text-middle">
-            <text x="110" y="140" class="text-followers">${data.followers} Followers · ${data.following} Following</text>
+            <text x="110" y="151" class="text-followers">${data.followers} Followers · ${data.following} Following</text>
         </g>
 
         <svg x="-10" y="12">
