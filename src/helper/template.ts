@@ -93,7 +93,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
     </style>
     <title id="titleId">${data.name}'s Stats Card</title>
 
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="535" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
+    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="534" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
     <g transform="translate(0, 25)">
         <g class="leftdiv">
         	<text x="10" y="-10" class="namepl">${data.name}'s GitHub Stats</text>
