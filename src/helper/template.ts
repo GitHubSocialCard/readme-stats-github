@@ -2,7 +2,7 @@ import type { GetData } from "./getData";
 import type { UiConfig } from "../api/index";
 
 export default function template(data: GetData, uiConfig: UiConfig): string {
-  var card = `<svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  var card = `<svg width="535" height="245" viewBox="0 0 535 245" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
     	/* Animations */
         @keyframes scaleInAnimation {
@@ -45,13 +45,17 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         }
         
         .imageanim {
-        	animation: scaleInAnimation 0.7s ease-in-out forwards;
+        	animation: scaleInAnimation 0.9s ease-in-out forwards;
         }
 
         .text {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            fill: #${uiConfig.textColor};
+            fill: #434d58;
             font-size: 14px;
+        }
+        
+        .text-middle {
+        	alignment-baseline: middle;
+            text-anchor: middle;
         }
 
         .singleitem {
@@ -60,14 +64,12 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         }
 
         .followers {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            fill: #${uiConfig.textColor};
+            fill: #434d58;
             font-size: 13px;
         }
         
         .uname {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            fill: #${uiConfig.textColor};
+            fill: #434d58;
             font-weight: 750;
             font-size: 14.6px;
             alignment-baseline: middle;
@@ -76,22 +78,22 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
 
         .namepl {
             font-family: Arial, Helvetica, sans-serif;
-            fill: #${uiConfig.titleColor};
+            fill: #2f80ed;
             font-size: 17px;
             font-weight: 600;
         }
 
         .icon {
-            fill: #${uiConfig.iconColor};
+            fill: #4c71f2;
             display: block;
         }
     </style>
-    <title id="titleId">${data.name} Stat's Card</title>
+    <title id="titleId">${data.name}'s Stats Card</title>
 
-    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="494" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
+    <rect x="0.5" y="0.5" rx="4.5" height="99%" width="535" fill="#${uiConfig.bgColor}" stroke="#${uiConfig.borderColor}" stroke-opacity="1" />
     <g transform="translate(0, 25)">
         <g class="leftdiv">
-        	<text x="10" y="-10" class="namepl">${data.name}</text>
+        	<text x="10" y="-10" class="namepl">${data.name}'s GitHub Stats</text>
         </g>
         <g class="imageanim">
         	<defs>
@@ -99,25 +101,21 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         	         <image x="0%" y="0%" width="512" height="512" href="data:image/jpg;base64,${data.pic}"></image>
                 </pattern>
             </defs>
-            <circle cx="120" cy="57" r="50" fill="url(#image)" />
+            <circle cx="125" cy="57" r="50" fill="url(#image)" />
         </g>
-        <g class="leftdiv">
-            <svg x="52.4" y="126.8" class="icon" viewBox="0 0 18 18" version="1.1" width="18" height="18">
-                <path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z" />
-            </svg>
-            <text x="104" y="117" class="uname">@${data.username}</text>
-            <text x="72.5" y="140" class="followers">Followers:</text>
-            <text x="134.5" y="140" style="font-weight: 700" class="followers">${data.followers}</text>
+        <text x="110.3" y="117" class="uname leftdiv">@DenverCoder1</text>
+        <g class="leftdiv text-middle">
+            <text x="110" y="140" class="followers">${data.followers} Followers · ${data.following} Following</text>
         </g>
 
-        <svg x="-17" y="14">
+        <svg x="-10" y="12">
             <g transform="translate(230, 0)">
                 <g class="singleitem" style="animation-delay: 210ms" transform="translate(25, 0)">
                     <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
-                        <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z" />
+                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                     </svg>
-                    <text class="text" x="25" y="12.5">Total Repo:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.public_repos}</text>
+                    <text class="text" x="25" y="12.5">Total Repository:</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.public_repos}</text>
                 </g>
             </g>
 
@@ -127,7 +125,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
                         <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z" />
                     </svg>
                     <text class="text" x="25" y="12.5">Star's Count:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.total_stars}</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_stars}</text>
                 </g>
             </g>
 
@@ -137,7 +135,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
                         <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z" />
                     </svg>
                     <text class="text" x="25" y="12.5">Fork's Count:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.total_forks}</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_forks}</text>
                 </g>
             </g>
 
@@ -146,8 +144,8 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
                     <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z" />
                     </svg>
-                    <text class="text" x="25" y="12.5">Contributions:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.total_contributions}</text>
+                    <text class="text" x="25" y="12.5">Commit's Count (${data.new_year}):</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_commits}</text>
                 </g>
             </g>
             
@@ -156,18 +154,38 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
                     <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
                     </svg>
-                    <text class="text" x="25" y="12.5">Total Pull Requests:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.total_prs}</text>
+                    <text class="text" x="25" y="12.5">Total PRs:</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_prs}</text>
+                </g>
+            </g>
+            
+            <g transform="translate(230, 125)">
+                <g class="singleitem" style="animation-delay: 760ms" transform="translate(25, 0)">
+                    <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd" d="M5.45 5.154A4.25 4.25 0 0 0 9.25 7.5h1.378a2.251 2.251 0 1 1 0 1.5H9.25A5.734 5.734 0 0 1 5 7.123v3.505a2.25 2.25 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.95-.218ZM4.25 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8.5-4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM5 3.25a.75.75 0 1 0 0 .005V3.25Z" />
+                    </svg>
+                    <text class="text" x="25" y="12.5">Total PRs Merged:</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_prs_merged}</text>
                 </g>
             </g>
 
-            <g transform="translate(230, 125)">
+            <g transform="translate(230, 150)">
                 <g class="singleitem" style="animation-delay: 760ms" transform="translate(25, 0)">
                     <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
                         <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z" />
                     </svg>
                     <text class="text" x="25" y="12.5">Total Issues:</text>
-                    <text class="text" style="font-weight: 700" x="180" y="12.5">${data.total_issues}</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_issues}</text>
+                </g>
+            </g>
+            
+            <g transform="translate(230, 175)">
+                <g class="singleitem" style="animation-delay: 760ms" transform="translate(25, 0)">
+                    <svg class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+                    </svg>
+                    <text class="text" x="25" y="12.5">Contributed to (last year):</text>
+                    <text class="text" style="font-weight: 700" x="225" y="12.5">${data.total_contributed_to}</text>
                 </g>
             </g>
         </svg>

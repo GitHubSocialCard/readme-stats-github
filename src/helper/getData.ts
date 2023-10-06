@@ -15,8 +15,10 @@ export type GetData = {
   total_issues: string | number;
   total_closed_issues: string | number;
   total_prs: string | number;
-  total_merged_prs: string | number;
-  total_contributions: string | number;
+  total_prs_merged: string | number;
+  total_commits: string | number;
+  total_contributed_to: string | number;
+  new_year: string | number;
 };
 
 async function getData(username: string): Promise<GetData> {
@@ -42,11 +44,13 @@ async function getData(username: string): Promise<GetData> {
     ),
     total_closed_issues: millify(user.closedIssues.totalCount),
     total_prs: millify(user.pullRequests.totalCount),
-    total_merged_prs: millify(user.mergedPullRequests.totalCount),
-    total_contributions: millify(
+    total_prs_merged: millify(user.mergedPullRequests.totalCount),
+    total_commits: millify(
       user.contributionsCollection.restrictedContributionsCount +
         user.contributionsCollection.totalCommitContributions
     ),
+    total_contributed_to: millify(user.repositoriesContributedTo),
+    new_year: new Date().getFullYear();
   };
 
   return output;
