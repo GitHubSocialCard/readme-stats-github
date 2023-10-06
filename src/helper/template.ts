@@ -65,13 +65,13 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         }
 
         .followers {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Segoe UI", Ubuntu, sans-serif;
             fill: #434d58;
             font-size: 13px;
         }
         
         .uname {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Segoe UI", Ubuntu, sans-serif;
             fill: #434d58;
             font-weight: 750;
             font-size: 14.6px;
@@ -80,7 +80,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         }
 
         .namepl {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Segoe UI", Ubuntu, sans-serif;
             fill: #2f80ed;
             font-size: 17px;
             font-weight: 600;
@@ -101,12 +101,12 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
         <g class="imageanim">
         	<defs>
                <pattern id="image" x="0%" y="0%" height="100%" width="100%" viewBox="0 0 512 512">
-        	         <image x="0%" y="0%" width="512" height="512" href="data:image/jpg;base64,${data.pic}"></image>
+        	         <image x="0%" y="0%" width="512" height="512" href="data:image/jpeg;base64,${data.pic}"></image>
                 </pattern>
             </defs>
-            <circle cx="125" cy="57" r="50" fill="url(#image)" />
+            <circle cx="125" cy="57" r="50" fill="url(#image)" stroke="#${uiConfig.strokeColor}" stroke-width="4"/>
         </g>
-        <text x="110.3" y="117" class="uname leftdiv">@DenverCoder1</text>
+        <text x="110.3" y="117" class="uname leftdiv">${data.username}</text>
         <g class="leftdiv text-middle">
             <text x="110" y="140" class="followers">${data.followers} Followers · ${data.following} Following</text>
         </g>
