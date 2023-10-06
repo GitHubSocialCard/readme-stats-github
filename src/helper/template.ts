@@ -106,7 +106,7 @@ export default function template(data: GetData, uiConfig: UiConfig): string {
             </defs>
             <circle cx="125" cy="57" r="50" fill="url(#image)" stroke="#${uiConfig.strokeColor}" stroke-width="4"/>
         </g>
-        <text x="110.3" y="117" class="uname leftdiv">${data.username}</text>
+        <text x="110.3" y="117" class="uname leftdiv">@${data.username}</text>
         <g class="leftdiv text-middle">
             <text x="110" y="140" class="followers">${data.followers} Followers · ${data.following} Following</text>
         </g>
